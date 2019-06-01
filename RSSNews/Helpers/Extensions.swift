@@ -35,4 +35,13 @@ extension Date: XMLElementDeserializable, XMLAttributeDeserializable {
         dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss zzz"
         return dateFormatter.date(from: dateAsString)
     }
+    
+    func toStr() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .medium
+        return formatter.string(from: self)
+        
+    }
+    
 }

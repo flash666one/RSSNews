@@ -9,31 +9,35 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import RxDataSources
+import FeedKit
 
 class NewsViewModel  {
     
     let disposeBag = DisposeBag()
-    var sections = Variable([NewsSectionModel]())
     
-    let dataSource = RxTableViewSectionedAnimatedDataSource<NewsSectionModel>(configureCell: { (ds, tw, ip, item) in
-        
-        let cell = UITableViewCell(style: .value2, reuseIdentifier: "identifier")
-//        cell.textLabel?.text = item.title
-        cell.textLabel?.text = "\(item.pubDate)"
-//        cell.textLabel?.text = item.title
-        return cell
-    })
+    var observableNews = BehaviorRelay<[News]>(value: [])
+    
+    var asdq = Variable<[News]>([])
+    
+    func changeValue(ip: IndexPath) {
+        var news = observableNews.value
+        news[ip.row].isSelected = !news[ip.row].isSelected
+        self.observableNews.accept(news)
+        print(news[ip.row].isSelected)
+    }
     
     func bindData () {
-        Observable.merge(
-            NetworkManager.getNews(rss: .gazeta),
-            NetworkManager.getNews(rss: .lenta)
-            ).map({ $0.sorted(by: {$0.pubDate < $1.pubDate })}).subscribe(onNext: { (news) in
-                self.sections.value = [NewsSectionModel(header: "Title", items: news)]
-            }, onCompleted: {
-                print("completed")
-            }).disposed(by: disposeBag)
+
+        Observable.combineLatest(
+            NetworkManager.getNews(source: .gazeta),
+            NetworkManager.getNews(source: .lenta)
+            ).map {  gazeta , lenta   in
+                let array = [gazeta,lenta].flatMap({ $0 })
+                let sorted = array.sorted(by: {$0.pubDate < $1.pubDate })
+                return sorted
+            }.bind(to: observableNews)
+            .disposed(by: disposeBag)
+        
     }
     
     

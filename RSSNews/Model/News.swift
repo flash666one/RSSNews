@@ -9,14 +9,17 @@
 import Foundation
 import SWXMLHash
 
+
 struct News : XMLIndexerDeserializable {
     
     var description: String
     var pubDate: Date
-    var enclosure: String
+    var enclosure: String?
     var title : String
-    var link : String
-    var guid : String
+    var link : String?
+    var guid : String?
+    var author : String?
+    var isSelected : Bool
     
     static func deserialize(_ node: XMLIndexer) throws -> News {
         return try News(
@@ -25,8 +28,11 @@ struct News : XMLIndexerDeserializable {
             enclosure: node["enclosure"].value(ofAttribute: "url"),
             title: node["title"].value(),
             link: node["link"].value(),
-            guid: node["guid"].value()
+            guid: node["guid"].value(),
+            author: node["author"].value(),
+            isSelected: false
         )
     }
     
 }
+

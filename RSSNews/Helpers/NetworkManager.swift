@@ -7,20 +7,20 @@
 //
 
 import Foundation
-import Alamofire
 import RxSwift
+import Alamofire
 import SWXMLHash
 
 class NetworkManager {
     
-    enum RSS {
+    enum Source {
         case lenta, gazeta
     }
     
-    static func getNews (rss : RSS) -> Observable<[News]> {
+    static func getNews (source : Source) -> Observable<[News]> {
         
         let url: String = {
-            switch rss {
+            switch source {
             case .gazeta :
                 return "https://www.gazeta.ru/export/rss/lenta.xml"
             case .lenta :
@@ -36,7 +36,6 @@ class NetworkManager {
                         do {
                             let xml = SWXMLHash.parse(data)
                             let newsArray:  [News] = try xml["rss"]["channel"]["item"].value()
-                            print(newsArray.count)
                             observer.onNext(newsArray)
                             observer.onCompleted()
                         } catch (let error) {
@@ -46,7 +45,7 @@ class NetworkManager {
                     case .failure(let error):
                         observer.onError(error)
                     }
-            })
+                })
             return Disposables.create {
                 request.cancel()
             }

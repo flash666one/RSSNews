@@ -1,4 +1,4 @@
 github "Alamofire/Alamofire" "4.8.1"
 github "ReactiveX/RxSwift" "4.5.0"
-github "RxSwiftCommunity/RxDataSources" "3.1.0"
 github "drmohundro/SWXMLHash" "4.9.0"
+github "onevcat/Kingfisher" "5.5.0"

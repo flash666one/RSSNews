@@ -10,20 +10,19 @@
 		ACF7336C229C6E3800D78855 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF73363229C6E3800D78855 /* SWXMLHash.framework */; };
 		ACF7336D229C6E3800D78855 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF73364229C6E3800D78855 /* RxCocoa.framework */; };
 		ACF7336E229C6E3800D78855 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF73365229C6E3800D78855 /* RxSwift.framework */; };
-		ACF73370229C6E3800D78855 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF73367229C6E3800D78855 /* RxDataSources.framework */; };
 		ACF73371229C6E3800D78855 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF73368229C6E3800D78855 /* Alamofire.framework */; };
 		ACF73373229C6E5600D78855 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF73368229C6E3800D78855 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF73377229C6E5600D78855 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF73364229C6E3800D78855 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ACF73378229C6E5600D78855 /* RxDataSources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF73367229C6E3800D78855 /* RxDataSources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF73379229C6E5600D78855 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF73365229C6E3800D78855 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF7337B229C6E5600D78855 /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF73363229C6E3800D78855 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACF73381229C6EFF00D78855 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF73380229C6EFF00D78855 /* NetworkManager.swift */; };
 		ACF73386229C87D800D78855 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF73385229C87D800D78855 /* News.swift */; };
 		ACF73388229C8B8900D78855 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF73387229C8B8900D78855 /* Extensions.swift */; };
 		ACF7338A229C8DEE00D78855 /* NewsTableViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF73389229C8DEE00D78855 /* NewsTableViewContoller.swift */; };
-		ACF7338C229C8E7F00D78855 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7338B229C8E7F00D78855 /* NewsCell.swift */; };
 		ACF7338E229C96A900D78855 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7338D229C96A900D78855 /* NewsViewModel.swift */; };
-		ACF73390229C96ED00D78855 /* NewsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7338F229C96ED00D78855 /* NewsSection.swift */; };
+		ACF733AA229F239400D78855 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACF733A4229F21E500D78855 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ACF733B2229FD92300D78855 /* RSSItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF733B0229FD92300D78855 /* RSSItemCell.swift */; };
+		ACF733B3229FD92300D78855 /* RSSItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF733B1229FD92300D78855 /* RSSItemCell.xib */; };
 		ACFA21F7229C6562002D808F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFA21F6229C6562002D808F /* AppDelegate.swift */; };
 		ACFA21FE229C6563002D808F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACFA21FD229C6563002D808F /* Assets.xcassets */; };
 		ACFA2201229C6563002D808F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFA21FF229C6563002D808F /* LaunchScreen.storyboard */; };
@@ -36,9 +35,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				ACF733AA229F239400D78855 /* Kingfisher.framework in Embed Frameworks */,
 				ACF73373229C6E5600D78855 /* Alamofire.framework in Embed Frameworks */,
 				ACF73377229C6E5600D78855 /* RxCocoa.framework in Embed Frameworks */,
-				ACF73378229C6E5600D78855 /* RxDataSources.framework in Embed Frameworks */,
 				ACF73379229C6E5600D78855 /* RxSwift.framework in Embed Frameworks */,
 				ACF7337B229C6E5600D78855 /* SWXMLHash.framework in Embed Frameworks */,
 			);
@@ -61,9 +60,12 @@
 		ACF73385229C87D800D78855 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		ACF73387229C8B8900D78855 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ACF73389229C8DEE00D78855 /* NewsTableViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewContoller.swift; sourceTree = "<group>"; };
-		ACF7338B229C8E7F00D78855 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		ACF7338D229C96A900D78855 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
-		ACF7338F229C96ED00D78855 /* NewsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSection.swift; sourceTree = "<group>"; };
+		ACF733A4229F21E500D78855 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		ACF733AC229FC72400D78855 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		ACF733AE229FC75100D78855 /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/iOS/FeedKit.framework; sourceTree = "<group>"; };
+		ACF733B0229FD92300D78855 /* RSSItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSItemCell.swift; sourceTree = "<group>"; };
+		ACF733B1229FD92300D78855 /* RSSItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RSSItemCell.xib; sourceTree = "<group>"; };
 		ACFA21F3229C6562002D808F /* RSSNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACFA21F6229C6562002D808F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACFA21FD229C6563002D808F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,7 +81,6 @@
 				ACF7336C229C6E3800D78855 /* SWXMLHash.framework in Frameworks */,
 				ACF7336D229C6E3800D78855 /* RxCocoa.framework in Frameworks */,
 				ACF7336E229C6E3800D78855 /* RxSwift.framework in Frameworks */,
-				ACF73370229C6E3800D78855 /* RxDataSources.framework in Frameworks */,
 				ACF73371229C6E3800D78855 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +91,9 @@
 		ACF73360229C6E3800D78855 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ACF733AE229FC75100D78855 /* FeedKit.framework */,
+				ACF733AC229FC72400D78855 /* LICENSE */,
+				ACF733A4229F21E500D78855 /* Kingfisher.framework */,
 				ACF73368229C6E3800D78855 /* Alamofire.framework */,
 				ACF73369229C6E3800D78855 /* Differentiator.framework */,
 				ACF73362229C6E3800D78855 /* RxAtomic.framework */,
@@ -107,7 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				ACF73389229C8DEE00D78855 /* NewsTableViewContoller.swift */,
-				ACF7338B229C8E7F00D78855 /* NewsCell.swift */,
+				ACF733B0229FD92300D78855 /* RSSItemCell.swift */,
+				ACF733B1229FD92300D78855 /* RSSItemCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,7 +138,6 @@
 			children = (
 				ACF73380229C6EFF00D78855 /* NetworkManager.swift */,
 				ACF73387229C8B8900D78855 /* Extensions.swift */,
-				ACF7338F229C96ED00D78855 /* NewsSection.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -230,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF733B3229FD92300D78855 /* RSSItemCell.xib in Resources */,
 				ACFA2201229C6563002D808F /* LaunchScreen.storyboard in Resources */,
 				ACFA21FE229C6563002D808F /* Assets.xcassets in Resources */,
 			);
@@ -247,27 +252,25 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SWXMLHash.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/Alamofire.framework",
-				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/Differentiator.framework",
 				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/RxAtomic.framework",
 				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/RxSwift.framework",
 				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/RxTest.framework",
 				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/SWXMLHash.framework",
+				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS//Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -282,12 +285,11 @@
 			files = (
 				ACF73388229C8B8900D78855 /* Extensions.swift in Sources */,
 				ACF73381229C6EFF00D78855 /* NetworkManager.swift in Sources */,
-				ACF73390229C96ED00D78855 /* NewsSection.swift in Sources */,
 				ACF7338A229C8DEE00D78855 /* NewsTableViewContoller.swift in Sources */,
-				ACF7338C229C8E7F00D78855 /* NewsCell.swift in Sources */,
 				ACF73386229C87D800D78855 /* News.swift in Sources */,
 				ACFA21F7229C6562002D808F /* AppDelegate.swift in Sources */,
 				ACF7338E229C96A900D78855 /* NewsViewModel.swift in Sources */,
+				ACF733B2229FD92300D78855 /* RSSItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
