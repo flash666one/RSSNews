@@ -29,7 +29,8 @@ class RSSItemCell: UITableViewCell {
             guard let url = URL(string: urlStr) else {return}
             self.sourceLabel.text = news.author ?? "LENTA.RU"
             self.titleLabel.text = news.title
-            self.descriptionLabel.text = news.description.replacingOccurrences(of: "^\\s*", with: "", options: .regularExpression)
+            let str = news.description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression)
+            self.descriptionLabel.text = str
             self.dateLabel.text = news.pubDate.toStr()
             self.rssImageView?.kf.setImage(with: url)
             self.descriptionLabel.isHidden = !self.news.isSelected

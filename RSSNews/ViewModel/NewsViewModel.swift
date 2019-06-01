@@ -23,7 +23,6 @@ class NewsViewModel  {
         var news = observableNews.value
         news[ip.row].isSelected = !news[ip.row].isSelected
         self.observableNews.accept(news)
-        print(news[ip.row].isSelected)
     }
     
     func bindData () {
