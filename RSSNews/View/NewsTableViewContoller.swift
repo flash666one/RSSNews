@@ -68,16 +68,16 @@ extension NewsTableViewController {
         let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
 
         let item = viewModel.observableNews.value[indexPath.row]
-        let descriptionText = item.description.replacingOccurrences(of: "^\\s*", with: "", options: .regularExpression)
+        let descriptionText = item.description.replacingOccurrences(of: "<[^>]+>s", with: "", options: .regularExpression)
         let size = CGSize(width: view.frame.width - 32, height: 1000)
 
         let titleFrame = NSString(string: item.title).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)], context: nil)
-        let sourceFrame = NSString(string: item.author ?? "").boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)], context: nil)
+        let sourceFrame = NSString(string: item.author ?? "").boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)], context: nil)
         let descFrame = NSString(string: descriptionText).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)], context: nil)
         let dateFrame = NSString(string: item.pubDate.toStr()).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)], context: nil)
 
 
-        let imageViewHeight = ((self.view.frame.width / 3) * 2) + 68
+        let imageViewHeight = ((self.view.frame.width / 3) * 2) + 48
         
         let descHeight = item.isSelected ? descFrame.height : 0
 

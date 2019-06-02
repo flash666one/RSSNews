@@ -32,7 +32,7 @@ class NewsViewModel  {
             NetworkManager.getNews(source: .lenta)
             ).map {  gazeta , lenta   in
                 let array = [gazeta,lenta].flatMap({ $0 })
-                let sorted = array.sorted(by: {$0.pubDate < $1.pubDate })
+                let sorted = array.sorted(by: {$0.pubDate > $1.pubDate })
                 return sorted
             }.bind(to: observableNews)
             .disposed(by: disposeBag)

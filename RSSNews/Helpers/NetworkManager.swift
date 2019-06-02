@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 import Alamofire
 import SWXMLHash
+import UIKit
 
 class NetworkManager {
     

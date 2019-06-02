@@ -5,7 +5,7 @@
 //  Created by Артём Горюнов on 30/05/2019.
 //  Copyright © 2019 Артём Горюнов. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class RSSItemCell: UITableViewCell {
@@ -14,26 +14,40 @@ class RSSItemCell: UITableViewCell {
     
     @IBOutlet weak var rssImageView: UIImageView!
     
-    @IBOutlet weak var sourceLabel: UILabel!
-    
     @IBOutlet weak var titleLabel: UILabel!
-    
-    @IBOutlet weak var descriptionLabel: UILabel!
-    
-    @IBOutlet weak var dateLabel: UILabel!
-    
+
     
     var news: News! {
         didSet {
             guard let urlStr = news.enclosure else { return }
             guard let url = URL(string: urlStr) else {return}
-            self.sourceLabel.text = news.author ?? "LENTA.RU"
-            self.titleLabel.text = news.title
-            let str = news.description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression)
-            self.descriptionLabel.text = str
-            self.dateLabel.text = news.pubDate.toStr()
+            
+            let firstAttributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.boldSystemFont(ofSize: 18),
+                .foregroundColor: UIColor.black
+            ]
+            
+            let secondAttributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.systemFont(ofSize: 17),
+                .foregroundColor: UIColor.black
+            ]
+            
+            let stringValue = NSMutableAttributedString(string: (news.author ?? "LENTA.RU") + "\n", attributes: firstAttributes)
+            
+            let description = news.description.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression)
+            
+            let title = NSAttributedString(string: (news.title) + "\n", attributes: firstAttributes)
+            let descAttributed = NSAttributedString(string: (description) + "\n", attributes: secondAttributes)
+            let date = news.pubDate.toStr()
+            let dateAttributed = NSAttributedString(string: (date) + "\n", attributes: secondAttributes)
+            
+            stringValue.append(title)
+            if news.isSelected { stringValue.append(descAttributed) }
+
+            stringValue.append(dateAttributed)
+            self.titleLabel.attributedText = stringValue
             self.rssImageView?.kf.setImage(with: url)
-            self.descriptionLabel.isHidden = !self.news.isSelected
+            
         }
     }
     
