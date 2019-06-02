@@ -16,6 +16,10 @@ class NewsTableViewController : UITableViewController {
     
     let identifier = "RSSItemCell"
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.refreshControl?.beginRefreshing()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +40,7 @@ class NewsTableViewController : UITableViewController {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
-        viewModel.bindData()
+        self.refresh()
         viewModel.observableNews.bind(to: tableView.rx.items(cellIdentifier: identifier, cellType: RSSItemCell.self)) { ( ip, item, cell) in
             cell.news = item
             cell.contentView.backgroundColor = self.tableView.backgroundColor

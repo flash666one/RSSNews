@@ -54,7 +54,6 @@ class RSSItemCell: UITableViewCell {
   
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         rssContentView.layer.cornerRadius = 16
         rssContentView.layer.masksToBounds = false
         rssContentView.layer.shadowColor = UIColor.black.cgColor

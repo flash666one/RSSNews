@@ -38,6 +38,7 @@ extension Date: XMLElementDeserializable, XMLAttributeDeserializable {
     
     func toStr() -> String {
         let formatter = DateFormatter()
+        formatter.locale = Locale.current
         formatter.dateStyle = .full
         formatter.timeStyle = .medium
         return formatter.string(from: self)

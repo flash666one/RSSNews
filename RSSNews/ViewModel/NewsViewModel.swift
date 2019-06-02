@@ -17,8 +17,6 @@ class NewsViewModel  {
     
     var observableNews = BehaviorRelay<[News]>(value: [])
     
-    var asdq = Variable<[News]>([])
-    
     func changeValue(ip: IndexPath) {
         var news = observableNews.value
         news[ip.row].isSelected = !news[ip.row].isSelected
@@ -26,7 +24,6 @@ class NewsViewModel  {
     }
     
     func bindData () {
-
         Observable.combineLatest(
             NetworkManager.getNews(source: .gazeta),
             NetworkManager.getNews(source: .lenta)
