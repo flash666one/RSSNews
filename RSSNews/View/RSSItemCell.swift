@@ -62,6 +62,10 @@ class RSSItemCell: UITableViewCell {
         rssContentView.layer.shadowRadius = 5
         rssContentView.layer.shouldRasterize = true
         rssContentView.layer.rasterizationScale = 1
+        rssImageView.layer.cornerRadius = 16
+        rssImageView.layer.masksToBounds = true
+        rssImageView.layer.borderWidth = 1
+        rssImageView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
 }
